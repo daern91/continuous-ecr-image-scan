@@ -8,5 +8,5 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: ${{ github.action_path }}/run_image_scans.sh ${{ inputs.ecr-repositories }}.
+    - run: ${{ github.action_path }}/run_image_scans.sh ${{ inputs.ecr-repositories }}
       shell: bash

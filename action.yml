@@ -1,0 +1,12 @@
+name: 'ECR image scanning'
+description: 'Used to scan images in AWS ECR repositories'
+inputs:
+  ecr-repositories:  # id of input
+    description: 'Repositories delimited by space, e.g. `repo-a repo-b repo-c`'
+    required: true
+    default: ''
+runs:
+  using: "composite"
+  steps:
+    - run: ${{ github.action_path }}/run_image_scans.sh ${{ inputs.ecr-repositories }}.
+      shell: bash

@@ -10,3 +10,5 @@ runs:
   steps:
     - run: ${{ github.action_path }}/run_image_scans.sh ${{ inputs.ecr-repositories }}
       shell: bash
+    - run: ${{ github.action_path }}/check_image_scan_results.sh ${{ inputs.ecr-repositories }}
+      shell: bash
